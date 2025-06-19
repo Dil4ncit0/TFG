@@ -1,0 +1,13 @@
+/* registro.css */
+
+/* Incluye marvel.css antes de este archivo */
+
+/* Si quieres sobrescribir o agregar estilos puntuales al registro, hazlo aquí. */
+/* Por ejemplo, centrar aún más el panel en pantallas pequeñas: */
+
+@media (max-width: 600px) {
+    .form-panel {
+        margin: 20px auto;
+        width: calc(100% - 40px);
+    }
+}

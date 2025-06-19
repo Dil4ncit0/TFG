@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mi Perfil - Marvel Cards</title>
+    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-bolt nav-icon"></i>
+                <a href="marvel.html" class="brand-text"><span class="brand-marvel">Marvel</span> Cards</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="marvel.html" class="nav-link">Inicio</a>
+                <a href="comprarSobres.html" class="nav-link">Comprar Sobres</a>
+                <a href="comprarMonedas.html" class="nav-link">Comprar Monedas</a>
+                <a href="#" id="logout-btn" class="nav-link nav-logout hidden">Cerrar Sesión</a>
+            </div>
+            <div class="nav-actions">
+                <div class="coins-display">
+                    <i class="fas fa-coins"></i>
+                    <span id="user-coins">0</span>
+                </div>
+                <a href="perfil.html" id="profile-btn" class="nav-link btn-red hidden">Mi Perfil</a>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="profile-container">
+        <div class="profile-sidebar">
+            <!-- User Info Card -->
+            <div class="profile-card">
+                <div class="profile-avatar">
+                    <img src="https://via.placeholder.com/96x96" alt="Avatar" id="user-avatar">
+                </div>
+                <h2 id="username">...</h2>
+                <div class="user-level">
+                    <i class="fas fa-star"></i>
+                    <span>Nivel <span id="user-level">0</span></span>
+                </div>
+                <div class="xp-progress">
+                    <div class="xp-info">
+                        <span>XP: <span id="current-xp">0</span></span>
+                        <span id="max-xp">0</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="xp-progress"></div>
+                    </div>
+                </div>
+                <div class="user-coins">
+                    <i class="fas fa-coins"></i>
+                    <span id="profile-coins">0</span> Monedas
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value" id="total-cards">0</div>
+                        <div class="stat-label">Cartas</div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <a href="#" class="action-btn">
+                        <i class="fas fa-box"></i>
+                        Mi Colección
+                    </a>
+                    <a href="#" class="action-btn">
+                        <i class="fas fa-shield"></i>
+                        Mis Mazos
+                    </a>
+                    <a href="comprarSobres.html" class="action-btn">
+                        <i class="fas fa-coins"></i>
+                        Tienda
+                    </a>
+                    <a href="#" class="action-btn">
+                        <i class="fas fa-cog"></i>
+                        Ajustes
+                    </a>
+                </div>
+            </div>
+
+            <!-- Collection Stats -->
+            <div class="collection-stats">
+                <h3>Estadísticas de Colección</h3>
+                <div class="rarity-stats">
+                    <div class="rarity-item">
+                        <div class="rarity-info">
+                            <span class="rarity-dot multiversal"></span>
+                            <span>Multiversales</span>
+                            <span class="rarity-count">0/0</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                    <div class="rarity-item">
+                        <div class="rarity-info">
+                            <span class="rarity-dot legendary"></span>
+                            <span>Legendarias</span>
+                            <span class="rarity-count">0/0</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                    <div class="rarity-item">
+                        <div class="rarity-info">
+                            <span class="rarity-dot epic"></span>
+                            <span>Epicas</span>
+                            <span class="rarity-count">0/0</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                    <div class="rarity-item">
+                        <div class="rarity-info">
+                            <span class="rarity-dot especial"></span>
+                            <span>Especiales</span>
+                            <span class="rarity-count">0/0</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                    <div class="rarity-item">
+                        <div class="rarity-info">
+                            <span class="rarity-dot rare"></span>
+                            <span>Raros</span>
+                            <span class="rarity-count">0/0</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="profile-main">
+            <div class="tabs" id="profile-tabs">
+                <div class="tabs-nav">
+                    <button class="tab-btn active" data-tab="resumen">Resumen</button>
+                    <button class="tab-btn" data-tab="logros">Logros</button>
+                </div>
+
+                <div class="tabs-content">
+                    <!-- Resumen Tab -->
+                    <div class="tab-panel active" id="resumen">
+                        <!-- Recent Cards -->
+                        <div class="content-card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-box"></i> Cartas Recientes</h3>
+                                <p>Últimas cartas obtenidas de sobres</p>
+                            </div>
+                            <div class="recent-cards-grid" id="recent-cards">
+                                <!-- JS lo llenará -->
+                            </div>
+                            <div class="card-footer">
+                                <a href="coleccion.html" class="btn btn-outline">Ver Toda Mi Colección</a>
+                            </div>
+                        </div>
+
+                        <!-- Achievements Preview -->
+                        <div class="content-card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-trophy"></i> Logros Destacados</h3>
+                            </div>
+                            <div class="achievements-preview" id="achievements-preview">
+                                <!-- JS lo llenará -->
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline" onclick="switchTab('logros')">Ver Todos los Logros</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Logros Tab -->
+                    <div class="tab-panel" id="logros">
+                        <div class="content-card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-trophy"></i> Logros</h3>
+                                <p>Completa logros para ganar recompensas y mostrar tu progreso</p>
+                            </div>
+                            <div class="achievements-list" id="achievements-list">
+                                <!-- JS lo llenará -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/global.js"></script>
+    <script src="js/perfil.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

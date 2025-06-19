@@ -1,0 +1,76 @@
+/* login.css */
+
+/* ------------------------------------------------
+   Usar junto con marvel.css
+   Clase a aplicar en <body>: class="login-page"
+------------------------------------------------ */
+
+body.login-page {
+    background: url('fondo-login.jpg') center/cover no-repeat;
+    position: relative;
+    height: calc(100vh - 60px);
+    /* 60px cuesta del header */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+/* Tarjeta semitransparente centrada */
+.login-card {
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 40px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 350px;
+    box-shadow: 0 0 15px rgba(230, 36, 41, 0.6);
+}
+
+.login-card h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #e62429;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+.login-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-card input {
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+}
+
+.login-card button {
+    padding: 12px;
+    background-color: #e62429;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-card button:hover {
+    background-color: #ff0000;
+}
+
+/* Adaptaciones responsive si quieres */
+@media (max-width: 480px) {
+    .login-card {
+        padding: 30px;
+    }
+
+    .login-card h2 {
+        font-size: 1.5rem;
+    }
+}

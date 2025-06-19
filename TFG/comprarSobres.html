@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Comprar Sobres - Marvel Cards</title>
+  <link rel="stylesheet" href="css/tienda.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+      <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <i class="fas fa-bolt nav-icon"></i>
+          <a href="marvel.html" class="brand-text"><span class="brand-marvel">Marvel</span> Cards</a>
+        </div>
+
+        <div class="nav-menu" id="nav-menu">
+          <a href="marvel.html" class="nav-link">Inicio</a>
+          <a href="comprarSobres.html" class="nav-link active">Comprar Sobres</a>
+          <a href="comprarMonedas.html" class="nav-link">Comprar Monedas</a>
+          <a href="batallas.html" class="nav-link">Batallas</a>
+          <a href="perfil.html" id="profile-btn" class="nav-link btn-red hidden">Mi Perfil</a>
+          <a href="#" id="logout-btn" class="nav-link nav-logout hidden">Cerrar Sesión</a>
+        </div>
+
+        <div class="nav-actions">
+          <div class="coins-display">
+            <i class="fas fa-coins"></i>
+            <span id="user-coins">1250</span>
+          </div>
+
+          <a href="inicio.html" id="login-btn" class="btn btn-outline">Iniciar Sesión</a>
+          <a href="registro.html" id="register-btn" class="btn btn-primary">Registrarse</a>
+
+          <button class="mobile-menu-btn" id="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+  <div class="shop-container">
+    <div class="shop-header">
+      <div>
+        <h1>Tienda de Sobres</h1>
+        <p>Compra sobres para obtener nuevas cartas y ampliar tu colección</p>
+      </div>
+      <div class="coins-info">
+        <a href="comprarMonedas.html" class="btn btn-outline">Comprar Monedas</a>
+      </div>
+    </div>
+
+    <div id="error-message" class="error-message hidden">
+      <i class="fas fa-exclamation-circle"></i>
+      <span id="error-text"></span>
+    </div>
+
+    <div class="tabs" id="shop-tabs">
+      <div class="tabs-nav">
+        <button class="tab-btn active" data-tab="sobres">Sobres</button>
+      </div>
+      <div class="tabs-content">
+        <!-- Sobres Tab -->
+        <div class="tab-panel active" id="sobres">
+          <div class="packs-grid" id="packs-grid">
+            <!-- Packs serán insertados por JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pack Opening Modal -->
+  <div id="pack-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-title">Abrir Sobre</h3>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+      <div class="modal-footer" id="modal-footer"></div>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/global.js"></script>
+  <script src="js/tienda.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

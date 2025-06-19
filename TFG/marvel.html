@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel Cards - Colecciona y Batalla</title>
+    <link rel="stylesheet" href="css/marvel.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-bolt nav-icon"></i>
+                <span class="brand-text"><span class="brand-marvel">Marvel</span> Cards</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="marvel.html" class="nav-link active">Inicio</a>
+                <a href="comprarSobres.html" class="nav-link">Comprar Sobres</a>
+                <a href="comprarMonedas.html" class="nav-link">Comprar Monedas</a>
+                <a href="batallas.html" class="nav-link">Batallas</a>
+                <a href="#" id="logout-btn" class="nav-link nav-logout hidden">Cerrar Sesión</a>
+            </div>
+            <div class="nav-actions">
+                <div class="coins-display">
+                    <i class="fas fa-coins"></i>
+                    <span id="user-coins"></span>
+                </div>
+                <a href="inicio.html"        id="login-btn"     class="btn btn-outline">Iniciar Sesión</a>
+                <a href="registro.html"     id="register-btn"  class="btn btn-primary">Registrarse</a>
+                <a href="perfil.html" id="profile-btn" class="nav-link btn-red hidden">Mi Perfil</a>
+                <button id="logout-nav-btn"  class="btn btn-secondary hidden">Cerrar Sesión</button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-badge">¡Nuevo Juego de Cartas Marvel!</div>
+            <h1 class="hero-title">Colecciona, Batalla y Conquista</h1>
+            <p class="hero-description">
+                Forma tu colección de héroes y villanos de Marvel, crea estrategias y derrota a tus oponentes en épicas batallas de cartas.
+            </p>
+            <div class="hero-actions">
+                <a href="registro.html" class="btn btn-hero">Comenzar Ahora</a>
+                <a href="#como-jugar" class="btn btn-hero-outline">Cómo Jugar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Cards -->
+    <section class="featured-cards">
+        <div class="container">
+            <h2 class="section-title">Consigue Tus Cartas</h2>
+            <div class="cards-grid" id="featured-cards-grid">
+                <!-- Cards will be populated by JavaScript -->
+            </div>
+            <div class="section-cta">
+                <a href="comprarSobres.html" class="btn btn-primary">Ver Más Cartas</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Play -->
+    <section id="como-jugar" class="how-to-play">
+        <div class="container">
+            <h2 class="section-title">Cómo Jugar</h2>
+            <div class="tabs" id="how-to-play-tabs">
+                <div class="tabs-nav">
+                    <button class="tab-btn active" data-tab="coleccionar">Coleccionar</button>
+                    <button class="tab-btn" data-tab="construir">Construir Mazo</button>
+                    <button class="tab-btn" data-tab="batallar">Batallar</button>
+                </div>
+                <div class="tabs-content">
+                    <div class="tab-panel active" id="coleccionar">
+                        <div class="tab-content">
+                            <div class="tab-text">
+                                <h3>Colecciona Cartas Épicas</h3>
+                                <p>Comienza tu colección comprando sobres que contienen cartas aleatorias de diferentes raridades. Cada sobre contiene 5 cartas con al menos una garantizada de rareza poco común o superior.</p>
+                                <p>Completa misiones diarias para ganar monedas y comprar más sobres. ¡Cuantas más cartas tengas, más estrategias podrás crear!</p>
+                                <a href="comprarSobres.html" class="btn btn-primary">
+                                    <i class="fas fa-box mr-2"></i>
+                                    Comprar Sobres
+                                </a>
+                            </div>
+                            <div class="tab-image">
+                                <div class="placeholder-image"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-panel" id="construir">
+                        <div class="tab-content">
+                            <div class="tab-image">
+                                <div class="placeholder-image"></div>
+                            </div>
+                            <div class="tab-text">
+                                <h3>Construye Tu Mazo Perfecto</h3>
+                                <p>Crea un mazo estratégico con tus mejores cartas. Cada mazo debe contener exactamente 20 cartas y debes equilibrar entre personajes ofensivos y defensivos.</p>
+                                <p>Experimenta con diferentes combinaciones para encontrar sinergias entre personajes y maximizar tu potencial de batalla.</p>
+                                <a href="perfil.html" class="btn btn-primary">
+                                    <i class="fas fa-users mr-2"></i>
+                                    Crear Mazo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-panel" id="batallar">
+                        <div class="tab-content">
+                            <div class="tab-text">
+                                <h3>¡A Batallar!</h3>
+                                <p>Desafía a otros jugadores en batallas por turnos. Cada turno podrás jugar cartas según tu energía disponible y atacar a las cartas enemigas o directamente al oponente.</p>
+                                <p>Gana batallas para subir en el ranking y obtener recompensas exclusivas. ¡Conviértete en el campeón supremo de Marvel Cards!</p>
+                                <a href="batallas.html" class="btn btn-primary">
+                                    <i class="fas fa-sword mr-2"></i>
+                                    Ir a Batallas
+                                </a>
+                            </div>
+                            <div class="tab-image">
+                                <div class="placeholder-image"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Características del Juego</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <h3>Colección Extensa</h3>
+                    <p>Más de 200 cartas únicas de personajes del universo Marvel para coleccionar, desde héroes icónicos hasta villanos temibles.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sword"></i>
+                    </div>
+                    <h3>Sistema de Combate</h3>
+                    <p>Batallas estratégicas por turnos donde cada decisión cuenta. Aprovecha las habilidades únicas de tus personajes para la victoria.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Torneos y Eventos</h3>
+                    <p>Participa en torneos semanales y eventos especiales para ganar cartas exclusivas y premios únicos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Comunidad Activa</h3>
+                    <p>Únete a una comunidad apasionada de fans de Marvel. Intercambia estrategias, forma alianzas y haz nuevos amigos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Economía In-Game</h3>
+                    <p>Sistema de monedas virtuales para comprar sobres y artículos especiales. Gana monedas jugando o adquiérelas en la tienda.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Actualizaciones Constantes</h3>
+                    <p>Nuevas cartas, eventos y funcionalidades añadidas regularmente para mantener la experiencia fresca y emocionante.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>¿Listo para la Aventura?</h2>
+            <p>Únete ahora y recibe un paquete de inicio con 10 sobres gratis para comenzar tu colección.</p>
+            <a href="registro.html" class="btn btn-cta">Registrarse y Reclamar Sobres</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/global.js"></script>
+    <script src="js/marvel.js"></script>
+    <script src="js/auth.js"></script>
+
+</body>
+</html>

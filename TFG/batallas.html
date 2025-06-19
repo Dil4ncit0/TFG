@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batallas - Marvel Cards</title>
+    <link rel="stylesheet" href="css/batallas.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+        <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+            <i class="fas fa-bolt nav-icon"></i>
+            <a href="marvel.html" class="brand-text"><span class="brand-marvel">Marvel</span> Cards</a>
+            </div>
+
+            <div class="nav-menu" id="nav-menu">
+            <a href="marvel.html" class="nav-link">Inicio</a>
+            <a href="comprarSobres.html" class="nav-link">Comprar Sobres</a>
+            <a href="comprarMonedas.html" class="nav-link">Comprar Monedas</a>
+            <a href="batallas.html" class="nav-link active">Batallas</a>
+            <a href="perfil.html" id="profile-btn" class="nav-link btn-red hidden">Mi Perfil</a>
+            <a href="#" id="logout-btn" class="nav-link nav-logout hidden">Cerrar Sesión</a>
+            </div>
+
+            <div class="nav-actions">
+            <div class="coins-display">
+                <i class="fas fa-coins"></i>
+                <span id="user-coins"></span>
+            </div>
+
+            <a href="inicio.html" id="login-btn" class="btn btn-outline">Iniciar Sesión</a>
+            <a href="registro.html" id="register-btn" class="btn btn-primary">Registrarse</a>
+
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            </div>
+        </div>
+        </nav>
+    <!-- Battle Selection Screen -->
+    <div id="battle-selection" class="battle-selection">
+        <div class="battle-header">
+            <div>
+                <h1>Batallas</h1>
+                <p>Enfrenta a otros jugadores y demuestra tu habilidad estratégica</p>
+            </div>
+        </div>
+
+        <div class="tabs" id="battle-tabs">
+            <div class="tabs-nav">
+                <button class="tab-btn active" data-tab="pvp">Jugador vs Jugador</button>
+                <button class="tab-btn" data-tab="torneos">Torneos</button>
+            </div>
+            
+            <div class="tabs-content">
+                <!-- PvP Tab -->
+                <div class="tab-panel active" id="pvp">
+                    <div class="opponents-grid" id="opponents-grid">
+                        <!-- Opponents will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Torneos Tab -->
+                <div class="tab-panel" id="torneos">
+                    <div class="tournaments-list" id="tournaments-list">
+                        <!-- Tournaments will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Battle Arena -->
+    <div id="battle-arena" class="battle-arena hidden">
+        <div class="battle-controls">
+            <div class="battle-info">
+                <h2>Batalla vs <span id="opponent-name"></span></h2>
+                <div class="battle-turn">Turno <span id="turn-number">1</span></div>
+            </div>
+            <button class="btn btn-outline" id="abandon-battle">Abandonar Batalla</button>
+        </div>
+
+        <div class="arena-layout">
+            <!-- Battle Field -->
+            <div class="battle-field">
+                <!-- Opponent Area -->
+                <div class="player-area opponent-area">
+                    <div class="player-info">
+                        <div class="player-avatar">
+                            <img id="opponent-avatar" src="/placeholder.svg" alt="Oponente">
+                        </div>
+                        <div class="player-details">
+                            <h3 id="opponent-display-name"></h3>
+                            <div class="energy-display">
+                                <i class="fas fa-bolt"></i>
+                                <span id="opponent-energy">3</span> Energía
+                            </div>
+                        </div>
+                        <div class="health-display">
+                            <i class="fas fa-heart"></i>
+                            <span id="opponent-health">20</span>/20
+                        </div>
+                    </div>
+                    <div class="health-bar">
+                        <div class="health-fill" id="opponent-health-bar"></div>
+                    </div>
+                    <div class="cards-field" id="opponent-field">
+                        <!-- Opponent cards will be placed here -->
+                    </div>
+                </div>
+
+                <!-- Battlefield -->
+                <div class="battlefield">
+                    <div class="battlefield-line"></div>
+                    <div id="battle-message" class="battle-message hidden"></div>
+                    <div id="direct-attack-btn" class="direct-attack hidden">
+                        <button class="btn btn-primary">
+                            Atacar Directamente
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Player Area -->
+                <div class="player-area player-area-self">
+                    <div class="cards-field" id="player-field">
+                        <!-- Player cards will be placed here -->
+                    </div>
+                    <div class="player-info">
+                        <div class="player-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="player-details">
+                            <h3>Tú</h3>
+                            <div class="energy-display">
+                                <i class="fas fa-bolt"></i>
+                                <span id="player-energy">3</span> Energía
+                            </div>
+                        </div>
+                        <div class="health-display">
+                            <i class="fas fa-heart"></i>
+                            <span id="player-health">20</span>/20
+                        </div>
+                    </div>
+                    <div class="health-bar">
+                        <div class="health-fill" id="player-health-bar"></div>
+                    </div>
+                </div>
+
+                <!-- Player Hand -->
+                <div class="player-hand">
+                    <h3>Tu Mano</h3>
+                    <div class="hand-cards" id="hand-cards">
+                        <!-- Hand cards will be populated by JavaScript -->
+                    </div>
+                    <div class="hand-controls">
+                        <button class="btn btn-primary" id="end-turn-btn">Terminar Turno</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Battle Log -->
+            <div class="battle-log">
+                <h3>Registro de Batalla</h3>
+                <div class="log-content" id="battle-log">
+                    <!-- Battle log will be populated by JavaScript -->
+                </div>
+                <div id="battle-result" class="battle-result hidden">
+                    <!-- Battle result will be shown here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Battle Confirmation Modal -->
+    <div id="battle-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="battle-modal-title">Desafiar Oponente</h3>
+            </div>
+            <div class="modal-body" id="battle-modal-body">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancel-battle">Cancelar</button>
+                <button class="btn btn-primary" id="start-battle">
+                    <i class="fas fa-sword"></i>
+                    Comenzar Batalla
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/global.js"></script>
+    <script src="js/batallas.js"></script>
+    <script src="js/auth.js"></script>
+
+</body>
+</html>

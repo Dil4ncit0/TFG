@@ -1,0 +1,88 @@
+/* css/coleccion.css */
+
+.coleccion-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.back-button-container {
+    margin: 1rem;
+}
+
+/* Grid de cartas */
+.collection-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+}
+
+/* Carta individual */
+.collection-card {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-primary) 100%);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.collection-card:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+}
+
+/* Imagen de personaje */
+.collection-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Contenedor de texto */
+.collection-card-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    text-shadow: 0 0 4px rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+}
+
+.collection-card-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Si en el futuro tienes rarezas, puedes usar estos badges */
+.collection-card-rarity {
+    position: absolute;
+    top: var(--spacing-xs);
+    right: var(--spacing-xs);
+    z-index: 1;
+    background-color: rgba(0,0,0,0.5);
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    text-transform: capitalize;
+}
+
+.badge-multiversal { background-color: var(--rarity-multiversal); }
+.badge-legendary    { background-color: var(--rarity-legendary); }
+.badge-epic         { background-color: var(--rarity-epic); }
+.badge-especial     { background-color: var(--rarity-especial); }
+.badge-rare         { background-color: var(--rarity-rare); }

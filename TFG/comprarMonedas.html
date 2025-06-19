@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprar Monedas - Marvel Cards</title>
+    <link rel="stylesheet" href="css/monedas.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+        <!-- Navigation -->
+    <nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-brand">
+        <i class="fas fa-bolt nav-icon"></i>
+        <a href="marvel.html" class="brand-text"><span class="brand-marvel">Marvel</span> Cards</a>
+        </div>
+
+        <div class="nav-menu" id="nav-menu">
+        <a href="marvel.html" class="nav-link">Inicio</a>
+        <a href="comprarSobres.html" class="nav-link">Comprar Sobres</a>
+        <a href="comprarMonedas.html" class="nav-link active">Comprar Monedas</a>
+        <a href="batallas.html" class="nav-link">Batallas</a>
+        <a href="perfil.html" id="profile-btn" class="nav-link btn-red hidden">Mi Perfil</a>
+        <a href="#" id="logout-btn" class="nav-link nav-logout hidden">Cerrar Sesión</a>
+        </div>
+
+        <div class="nav-actions">
+        <div class="coins-display">
+            <i class="fas fa-coins"></i>
+            <span id="user-coins">1250</span>
+        </div>
+
+        <a href="inicio.html" id="login-btn" class="btn btn-outline">Iniciar Sesión</a>
+        <a href="registro.html" id="register-btn" class="btn btn-primary">Registrarse</a>
+
+        <button class="mobile-menu-btn" id="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        </div>
+    </div>
+    </nav>
+    <div class="coins-container">
+        <div class="coins-header">
+            <h1>Comprar Monedas</h1>
+            <p>Adquiere monedas para comprar sobres y desbloquear nuevas cartas para tu colección</p>
+        </div>
+
+        <div class="tabs" id="coins-tabs">
+            <div class="tabs-nav">
+                <button class="tab-btn active" data-tab="paquetes">Paquetes de Monedas</button>
+                <button class="tab-btn" data-tab="suscripciones">Suscripciones</button>
+            </div>
+            
+            <div class="tabs-content">
+                <!-- Paquetes Tab -->
+                <div class="tab-panel active" id="paquetes">
+                    <div class="coins-grid" id="coins-packages">
+                        <!-- Packages will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Suscripciones Tab -->
+                <div class="tab-panel" id="suscripciones">
+                    <div class="subscriptions-grid" id="subscriptions">
+                        <!-- Subscriptions will be populated by JavaScript -->
+                    </div>
+                    <div class="subscription-note">
+                        <p>Las suscripciones se renuevan automáticamente al final de cada período. Puedes cancelar en cualquier momento desde tu perfil.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gift Code Section -->
+        <div class="gift-section">
+            <div class="gift-content">
+                <i class="fas fa-gift gift-icon"></i>
+                <div class="gift-text">
+                    <h3>¿Tienes un código de regalo?</h3>
+                    <p>Canjea tu código de regalo para recibir monedas o artículos especiales</p>
+                    <div class="gift-form">
+                        <input type="text" id="gift-code" placeholder="Ingresa tu código" class="gift-input">
+                        <button class="btn btn-primary" id="redeem-btn">Canjear</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Purchase Modal -->
+    <div id="purchase-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="purchase-title">Comprar Paquete</h3>
+            </div>
+            <div class="modal-body">
+                <div id="purchase-details"></div>
+                <div class="payment-methods">
+                    <h4>Método de Pago</h4>
+                    <div class="payment-options">
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="credit-card" checked>
+                            <span class="payment-label">
+                                <i class="fas fa-credit-card"></i>
+                                Tarjeta de Crédito/Débito
+                            </span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="paypal">
+                            <span class="payment-label">
+                                <i class="fab fa-paypal"></i>
+                                PayPal
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div id="credit-card-form" class="payment-form">
+                    <div class="form-group">
+                        <label for="card-number">Número de Tarjeta</label>
+                        <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry">Fecha de Expiración</label>
+                            <input type="text" id="expiry" placeholder="MM/AA">
+                        </div>
+                        <div class="form-group">
+                            <label for="cvc">CVC</label>
+                            <input type="text" id="cvc" placeholder="123">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-name">Nombre en la Tarjeta</label>
+                        <input type="text" id="card-name" placeholder="John Doe">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancel-purchase">Cancelar</button>
+                <button class="btn btn-primary" id="confirm-purchase">Pagar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/global.js"></script>
+    <script src="js/monedas.js"></script>
+    <script src="js/auth.js"></script>
+
+</body>
+</html>
