@@ -33,10 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
       chars.forEach(ch => {
         const card = document.createElement('div');
         card.className = 'collection-card';
+        card.addEventListener('click', () => {
+          window.location.href = `personaje.html?nombre=${encodeURIComponent(ch.name)}`;
+        });
 
         card.innerHTML = `
-          <!-- si tu API incluye rareza, descomenta y ajusta -->
-          <!-- <div class="collection-card-rarity badge-${ch.rarity}">${ch.rarity}</div> -->
           <img src="${ch.image}" alt="${ch.name}">
           <div class="collection-card-info">
             <div class="collection-card-name">${ch.name}</div>

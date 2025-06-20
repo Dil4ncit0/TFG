@@ -1,0 +1,143 @@
+/* Contenedor principal centrado */
+.personaje-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: var(--spacing-lg) var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+/* Botón volver en rojo */
+.back-button-container {
+  width: 100%;
+  padding: 0 var(--spacing-md);
+}
+.back-button-container .btn {
+  background-color: var(--primary-red);
+  color: white;
+  border: 1px solid var(--primary-red);
+  transition: background-color 0.2s;
+}
+.back-button-container .btn:hover {
+  background-color: #c00000;
+}
+
+/* Tarjeta de personaje centrada */
+.personaje-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: var(--spacing-lg);
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  text-align: center;
+}
+
+/* Imagen del personaje */
+.personaje-card img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+
+/* Info centrada */
+.personaje-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  text-align: center;
+  width: 100%;
+}
+
+/* Nombre */
+.personaje-info h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* Meta info (tipo y rareza) */
+.personaje-meta {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.personaje-meta span {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.personaje-meta .type {
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+.personaje-meta .rarity {
+  background-color: var(--rarity-epic); /* Puedes cambiar dinámicamente esto */
+  color: white;
+}
+
+/* Descripción e historia */
+.personaje-info p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 700px;
+}
+.personaje-info p strong {
+  color: var(--text-primary);
+}
+
+/* Estadísticas */
+.personaje-stats {
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  width: 100%;
+  max-width: 600px;
+}
+.personaje-stats h2 {
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.personaje-stats ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  justify-content: center;
+}
+.personaje-stats li {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  text-align: center;
+  min-width: 100px;
+}
+.personaje-stats li strong {
+  display: block;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+}

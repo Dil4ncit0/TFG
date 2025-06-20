@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Seleccionar Personaje - Marvel Cards</title>
+  <link rel="stylesheet" href="css/global.css"/>
+  <link rel="stylesheet" href="css/seleccion.css"/>
+</head>
+<body>
+  <nav class="navbar"> <!-- Tu navbar aquí --> </nav>
+
+  <main class="selection-container">
+    <h1 id="mode-title">Modo </h1>
+    <div class="characters-grid" id="characters-grid">
+      <!-- Se llenará con fetch /characters/unlocked -->
+    </div>
+    <button id="confirm-btn" class="btn btn-primary" style="display:none">Iniciar Batalla</button>
+    <button id="finish-btn" class="btn btn-outline" style="display:none">Finalizar y Volver</button>
+  </main>
+
+  <script src="js/seleccion.js"></script>
+</body>
+</html>

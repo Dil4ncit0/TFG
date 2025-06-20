@@ -6,8 +6,21 @@
     padding: 0 1rem;
 }
 
-.back-button-container {
-    margin: 1rem;
+/* Estilo para el botón de volver en rojo */
+.back-button-container .btn {
+    background-color: var(--primary-red); /* Asegúrate de definir esta variable en global.css */
+    color: white;
+    border: 1px solid var(--primary-red);
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.back-button-container .btn:hover {
+    background-color: #c00000;
+    transform: translateY(-2px);
 }
 
 /* Grid de cartas */

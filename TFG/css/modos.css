@@ -1,0 +1,34 @@
+.mode-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 80px);
+  gap: var(--spacing-lg);
+}
+
+.mode-btn {
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.mode-btn:hover {
+  transform: scale(1.05);
+}
+
+.mode-1v1 {
+  background-color: var(--primary-red);
+  color: white;
+}
+
+.mode-2v2,
+.mode-3v3 {
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  cursor: not-allowed;
+}

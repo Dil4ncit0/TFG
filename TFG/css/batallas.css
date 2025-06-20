@@ -625,6 +625,199 @@
     opacity: 0.8;
 }
 
+/* Tabs */
+.tabs {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.tabs-nav {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--border);
+    background-color: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.tab-btn:hover {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.tab-btn.active {
+    background-color: var(--primary-red);
+    color: #fff;
+    border-color: var(--primary-red);
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+/* Estilos básicos para los botones de modo */
+.mode-buttons {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 400px;         /* Ancho mayor */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mode-buttons button {
+  padding: 24px 60px;   /* Más alto y más ancho */
+  font-size: 1.8rem;    /* Texto grande */
+  border: none;
+  border-radius: 16px;
+  background-color: #e62429;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;          /* Que ocupe todo el ancho del contenedor */
+  height: 70px;         /* Altura fija grande */
+}
+
+.mode-buttons button:hover {
+  background-color: #b71c21;
+}
+
+/* Contenedor modo de batalla */
+.modes-container {
+  display: flex;
+  flex-direction: column; /* Apiladas verticalmente */
+  align-items: center;    /* Centradas horizontalmente */
+  gap: 2.5rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+/* Tarjetas de modo */
+.mode-card {
+  background: #1c1c1c;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgb(230 36 41 / 0.4);
+  cursor: pointer;
+  width: 500px;          /* Más ancha */
+  height: 450px;         /* También más alta */
+  padding: 1.5rem;
+  text-align: center;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mode-card img {
+  width: 90%;             /* Imagen más ancha pero no al 100% */
+  height: 200px;          /* Imagen ligeramente más alta */
+  object-fit: contain;
+  margin: 0 auto 1.2rem;
+  border-radius: 10px;
+  background: #e62429;
+  padding: 0.5rem;
+  display: block;
+}
+
+.mode-card h3 {
+  margin: 0.25rem 0;
+  font-size: 2rem;        /* Más grande */
+  font-weight: 700;
+}
+
+.mode-card p {
+  font-size: 1.2rem;      /* Más grande */
+  color: #ddd;
+  margin-bottom: 0;
+}
+
+/* Hover y foco para accesibilidad */
+.mode-card:hover,
+.mode-card:focus {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgb(230 36 41 / 0.7);
+}
+
+/* Selección de personaje */
+.character-selection {
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.character-list {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.character-card {
+  background: #222;
+  border-radius: 12px;
+  width: 130px;
+  padding: 0.8rem;
+  cursor: pointer;
+  color: white;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  user-select: none;
+}
+
+.character-card img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.character-card p {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.character-card.selected {
+  box-shadow: 0 0 10px 3px #e62429;
+  transform: scale(1.05);
+}
+
+.btn-primary {
+  background-color: #e62429;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.btn-primary:hover {
+  background-color: #b71c21;
+}
+
+.hidden {
+  display: none
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     .arena-layout {
